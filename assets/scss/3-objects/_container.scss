@@ -1,0 +1,9 @@
+@mixin container{
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 0 20px;
+    @include responsive('sm'){
+        max-width: 600px;
+    }
+}
