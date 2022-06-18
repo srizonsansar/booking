@@ -4,6 +4,8 @@ export function formJS(){
 
     formDatePicker()
     noOfPerson()
+    hideForm1()
+    backBtn()
 
 }
 
@@ -40,4 +42,18 @@ function noOfPerson(){
         $('.form__field--number input').attr('value', inputValue)
     })
 
+}
+
+function hideForm1(){
+    $('.nearByTime__list--item').on('click', function(){
+        $('.mainBlock__selection').hide()
+        $('.mainBlock__booking').fadeIn()
+    })
+}
+
+function backBtn(){
+    $('.mainBlock__timing--back').on('click', function(){
+        $('.mainBlock__booking').hide()
+        $('.mainBlock__selection').fadeIn()
+    })
 }

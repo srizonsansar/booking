@@ -7,6 +7,9 @@
             font-weight: $fw-medium;
             padding-bottom: 5px;
             font-size: 14px;
+            .required{
+                color: $color-red;
+            }
         }
         &--number{
             display: flex;
@@ -43,6 +46,18 @@
             height: 45px;
             padding: 0 15px;
             width: 100%;
+            &.hasDropDown{
+                cursor: pointer;
+            }
+        }
+        &--textarea{
+            border-radius: 3px;
+            border: 1px solid $color-blue-dark;
+            min-height: 120px;
+            padding: 15px;
+            width: 100%;
+            font-weight: $fw-regular;
+            resize: none;
         }
         &--max{
             font-size: 11px;
@@ -73,6 +88,7 @@
                         &--item{
                             padding: 8px 20px;
                             font-weight: $fw-medium;
+                            cursor: pointer;
                             transition: color $time-fast, background-color $time-fast;
                             &:nth-child(2n+2){
                                 background-color: transparentize($color-grey-light, .5);
@@ -137,5 +153,47 @@
                 }
             }
         }
+    }
+    // Success and Error Message
+    .messageForm{
+        padding: 10px;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        @include responsive(md){
+            padding: 15px;
+        }
+        @include responsive(xl){
+            padding: 20px;
+        }
+        p{
+            font-weight: $fw-medium;
+            color: $color-white;
+        }
+    }
+    #successMessage{
+        background-color: $color-green;
+    }
+    #errorMessage{
+        background-color: $color-red;
+        p{
+            padding: 3px 0;
+        }
+    }
+}
+
+// Alert Flash
+.alertFlash{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 15px;
+    text-align: center;
+    color: $color-white;
+    &.error{
+        background-color: $color-red;
+    }
+    &.success{
+        background-color: $color-green;
     }
 }

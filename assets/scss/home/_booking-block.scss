@@ -1,40 +1,50 @@
 .mainBlock{
     &--container{
         @include container;
+    }
+    // Booking Selection
+    &__selection{
+        padding: 20px;
         background-color: $color-white;
         border-radius: 5px;
-    }
-    &--selection{
-        padding: 20px 0;
         @include responsive(md){
-            display: flex;
-            flex-wrap: wrap;
-            margin: 0 -10px;
-            padding: 30px 10px;
+            padding: 25px;
+        }
+        @include responsive(xl){
+            padding: 30px;
+        }
+        &--inner{
+            @include responsive(md){
+                margin: 0 -10px;
+                display: flex;
+                flex-wrap: wrap;
+            }
         }
         .form{
             &__field{
                 @include responsive(md){
-                    width: calc(33.3333% - 20px);
+                    width: calc(38% - 20px);
                     margin: 0 10px 20px;
                     align-self: flex-start;
+                }
+                &.first{
+                    @include responsive(md){
+                        width: calc(24% - 20px);
+                    }
                 }
             }
         }
     }
     .nearByTime{
-        padding-bottom: 20px;
+        padding-top: 20px;
         @include responsive(md){
-            padding-bottom: 30px;
-        }
-        @include responsive(xl){
-            padding-bottom: 40px;
+            padding-top: 30px;
         }
         &__list{
             display: flex;
             justify-content: center;
             &--item{
-                margin: 0 3px 6px;
+                margin: 3px;
                 background-color: $color-blue;
                 padding: 8px 15px;
                 color: $color-white;
@@ -49,55 +59,92 @@
             }
         }
     }
-    &__timing{
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        &--back{
-            font-weight: $fw-medium;
-            border: none;
-            border-radius: 5px;
-            height: 45px;
-            padding: 0 30px;
-            background-color: $color-blue;
-            color: $color-white;
-            display: flex;
-            align-items: center;
-            transition: background-color $time-fast, color $time-fast;
-            cursor: pointer;
-            margin-right: 15px;
-            @include responsive(xl){
-                margin-right: 25px;
-            }
-            &:before{
-                content: "";
-                position: relative;
-                left: 0;
-                width: 8px;
-                height: 8px;
-                border-top: 2px solid $color-white;
-                border-left: 2px solid $color-white;
-                transform: rotate(-45deg);
-                margin-right: 5px;
-                transition: left $time-fast;
-            }
-            &:hover{
-                @include responsive(xl){
-                    background-color: $color-blue-dark;
-                }
-                &:before{
+    // Booking Info
+    &__booking{
+        padding: 20px;
+        background-color: $color-white;
+        border-radius: 5px;
+        display: none;
+        @include responsive(md){
+            padding: 25px;
+        }
+        @include responsive(xl){
+            padding: 30px;
+        }
+        .mainBlock{
+            &__timing{
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                width: 100%;
+                padding-bottom: 20px;
+                &--back{
+                    font-weight: $fw-medium;
+                    border: none;
+                    border-radius: 5px;
+                    height: 40px;
+                    padding: 0 20px;
+                    background-color: $color-blue;
+                    color: $color-white;
+                    display: flex;
+                    align-items: center;
+                    transition: background-color $time-fast, color $time-fast;
+                    cursor: pointer;
+                    margin-right: 15px;
                     @include responsive(xl){
-                        left: -5px;
+                        margin-right: 25px;
+                    }
+                    &:before{
+                        content: "";
+                        position: relative;
+                        left: 0;
+                        width: 6px;
+                        height: 6px;
+                        border-top: 2px solid $color-white;
+                        border-left: 2px solid $color-white;
+                        transform: rotate(-45deg);
+                        margin-right: 5px;
+                        transition: left $time-fast;
+                    }
+                    &:hover{
+                        @include responsive(xl){
+                            background-color: $color-blue-dark;
+                        }
+                        &:before{
+                            @include responsive(xl){
+                                left: -5px;
+                            }
+                        }
+                    }
+                }
+                &--time{
+                    font-weight: $fw-sbold;
+                    font-size: 20px;
+                    color: $color-red;
+                    @include responsive(xl){
+                        font-size: 24px;
                     }
                 }
             }
         }
-        &--time{
-            font-weight: $fw-sbold;
-            font-size: 20px;
-            color: $color-red;
-            @include responsive(xl){
-                font-size: 24px;
+        &--inner{
+            @include responsive(md){
+                margin: 0 -10px;
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .form{
+                &__field{
+                    @include responsive(md){
+                        width: calc(50% - 20px);
+                        margin: 0 10px 20px;
+                    }
+                    &.full{
+                        @include responsive(md){
+                            width: 100%;
+                        }
+                    }
+                }
             }
         }
     }

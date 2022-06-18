@@ -15,67 +15,101 @@
        
     </head>
     <body>
+
+        <div class="alertFlash error">This is a quick alert.</div>
+        <div class="alertFlash success">This is a quick alert.</div>
         
         <div class="mainBlock">
             <form class="form">
                 <div class="mainBlock--container">
-                    
-                    <div class="mainBlock--selection">
-                        <div class="form__field">
-                            <label for="selectPeople">Select People</label>
-                            <div class="form__field--number">
-                                <span class="form__field--btn minus">-</span>
-                                <input type="number" min="1" max="12" id="selectPeople" value="2" class="form__field--input" readonly />
-                                <span class="form__field--btn plus">+</span>
+                    <div id="successMessage" class="messageForm">
+                        <p>Your booking has been registered.</p>
+                    </div>
+                    <div id="errorMessage" class="messageForm">
+                        <p>Name is missing</p>
+                        <p>Email is missing</p>
+                    </div>
+                    <div class="mainBlock__selection">
+                        <div class="mainBlock__selection--inner">
+                            <div class="form__field first">
+                                <label for="selectPeople">Select People <span class="required">*</span></label>
+                                <div class="form__field--number">
+                                    <span class="form__field--btn minus">-</span>
+                                    <input type="number" min="1" max="12" id="selectPeople" value="2" class="form__field--input" readonly />
+                                    <span class="form__field--btn plus">+</span>
+                                </div>
+                                <div class="form__field--max">Max. <span id="max">12</span></div>
                             </div>
-                            <div class="form__field--max">Max. <span id="max">12</span></div>
-                        </div>
-                        <div class="form__field">
-                            <label for="selectDate">Preferred Date</label>
-                            <input type="text" readonly id="selectDate" class="form__field--input datepicker" placeholder="Select Date" />
-                            <div id="date-picker-div"></div>
-                        </div>
-                        <div class="form__field">
-                            <label for="selectTime">Select Time</label>
-                            <div class="form__field--withDropDown">
-                                <input type="text" readonly id="selectTime" class="form__field--input timePicker hasDropDown" placeholder="Select Time" />
-                                <ul class="form__field__dropDown">
-                                    <li class="form__field__dropDown--item">10:00</li>
-                                    <li class="form__field__dropDown--item">11:00</li>
-                                    <li class="form__field__dropDown--item">12:00</li>
-                                    <li class="form__field__dropDown--item">13:00</li>
-                                    <li class="form__field__dropDown--item">14:00</li>
-                                    <li class="form__field__dropDown--item">15:00</li>
-                                    <li class="form__field__dropDown--item">16:00</li>
-                                    <li class="form__field__dropDown--item">17:00</li>
-                                    <li class="form__field__dropDown--item">18:00</li>
-                                </ul>
+                            <div class="form__field">
+                                <label for="selectDate">Preferred Date <span class="required">*</span></label>
+                                <input type="text" readonly id="selectDate" class="form__field--input datepicker" placeholder="Select Date" />
+                                <div id="date-picker-div"></div>
+                            </div>
+                            <div class="form__field">
+                                <label for="selectTime">Select Time <span class="required">*</span></label>
+                                <div class="form__field--withDropDown">
+                                    <input type="text" readonly id="selectTime" class="form__field--input timePicker hasDropDown" placeholder="Select Time" />
+                                    <ul class="form__field__dropDown">
+                                        <li class="form__field__dropDown--item">10:00</li>
+                                        <li class="form__field__dropDown--item">11:00</li>
+                                        <li class="form__field__dropDown--item">12:00</li>
+                                        <li class="form__field__dropDown--item">13:00</li>
+                                        <li class="form__field__dropDown--item">14:00</li>
+                                        <li class="form__field__dropDown--item">15:00</li>
+                                        <li class="form__field__dropDown--item">16:00</li>
+                                        <li class="form__field__dropDown--item">17:00</li>
+                                        <li class="form__field__dropDown--item">18:00</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="form__btn">
+                                <button class="form__btn--link" type="button">Find Table</button>
                             </div>
                         </div>
-                        <div class="form__btn">
-                            <button class="form__btn--link" type="button">Find Table</button>
+                        <div class="nearByTime">
+                            <ul class="nearByTime__list">
+                                <li class="nearByTime__list--item">15:00</li>
+                                <li class="nearByTime__list--item">15:15</li>
+                                <li class="nearByTime__list--item">15:45</li>
+                                <li class="nearByTime__list--item">16:00</li>
+                            </ul>
                         </div>
                     </div>
 
-                    <div class="nearByTime">
-                        <ul class="nearByTime__list">
-                            <li class="nearByTime__list--item">15:00</li>
-                            <li class="nearByTime__list--item">15:15</li>
-                            <li class="nearByTime__list--item">15:45</li>
-                            <li class="nearByTime__list--item">16:00</li>
-                        </ul>
-                    </div>
-
-                    <div class="mainBlock--booking">
+                    <div class="mainBlock__booking">
                         <div class="mainBlock__timing">
                             <span class="mainBlock__timing--back">Back</span>
                             <div class="mainBlock__timing--time">15m 10s Left</div>
                         </div>
-                        <div class="form__field">
-                            
+                        <div class="mainBlock__booking--inner">
+                            <div class="form__field">
+                                <label for="fullname">Full Name <span class="required">*</span></label>
+                                <input type="text" id="fullname" class="form__field--input" placeholder="Full Name" />
+                            </div>
+                            <div class="form__field">
+                                <label for="emailAd">Email Address <span class="required">*</span></label>
+                                <input type="text" id="emailAd" class="form__field--input" placeholder="Email Address" />
+                            </div>
+                            <div class="form__field">
+                                <label for="contactNo">Contact No. <span class="required">*</span></label>
+                                <input type="text" id="contactNo" class="form__field--input" placeholder="Contact No." />
+                            </div>
+                            <div class="form__field">
+                                <label for="address">Address</label>
+                                <input type="text" id="address" class="form__field--input" placeholder="Address" />
+                            </div>
+                            <div class="form__field full">
+                                <label for="messageBox">Message <span class="required">*</span></label>
+                                <textarea type="text" id="messageBox" class="form__field--textarea" placeholder="Your Message Here"></textarea>
+                            </div>
+                            <div class="form__field full">
+                                Place Captcha Div Here
+                            </div>
+                            <div class="form__btn">
+                                <button class="form__btn--link" type="submit">Book Now</button>
+                            </div>
                         </div>
                     </div>
-
                 </div>
             </form>
 
@@ -96,4 +130,19 @@
     Reference Layout
     https://www.opentable.co.uk/restref/client/?restref=225078&lang=en-GB&ot_source=Restaurant%20website&corrid=1d5037a8-4fc7-4ef4-8d06-6799dcfe48de
 
+    // Notes
+    1. Add a css display none to different elements and show them on different buttons submit. You can use jquery fadeIn to show them. Find them in scss file, you can use search of Code Editor. DIV to hide are: 
+        .messageForm
+        .alertFlash
+        .nearByTime
+
+    2. I have added address field, to make form balance in desktop screen. The address field can be leave non required.
+
+    3. I have done some demo, click on available time slots and click on back btn.
+
+    4. Till possible, do not use inline css and write all js in js files not in html.
+
+    5. Max no. of people is done from html. Just change value in html and it will be ok. You can make it dynamic as per restaurant size.
+
+    6. And delete this comment after task is done, do not leave un-necessary comments in html/css/js pages.
 -->
