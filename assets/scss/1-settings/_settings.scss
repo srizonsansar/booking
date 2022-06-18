@@ -3,7 +3,7 @@ body{
     margin: 0;
     padding: 50px 0 0;
     font-size: 13px;
-    background-color: $color-white;
+    background-color: $color-grey-light;
     @include responsive(md){
         font-size: 14px;
     }
@@ -54,6 +54,10 @@ input, select, textarea, button{
     -webkit-appearance: none;
     -moz-appearance: none;
     border-radius: 0;
+    @include responsive(md){
+        font-size: 15px;
+        font-weight: $fw-medium;
+    }
 }
 input, textarea {
     font-size: 16px;

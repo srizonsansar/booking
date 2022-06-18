@@ -21,41 +21,66 @@
                 <div class="mainBlock--container">
                     
                     <div class="mainBlock--selection">
-                        <div class="form__field form__field--number">
+                        <div class="form__field">
                             <label for="selectPeople">Select People</label>
-                            <input type="number" min="1" max="12" id="selectPeople" value="2" class="form__field--input" />
-                            <span id="max">12</span>
-                        </div>
-                        <div class="form__field form__field--number">
-                            <label for="selectDate">Select People</label>
-                            <input type="text" readonly id="selectDate" class="form__field--input" />
-                        </div>
-                        <div class="form__field form__field--number">
-                            <label for="selectTime">Select Time</label>
-                            <div class="selectParent">
-                                <select id="selectTime">
-                                    <option>10:00</option>
-                                    <option>11:00</option>
-                                    <option>12:00</option>
-                                    <option>13:00</option>
-                                    <option>14:00</option>
-                                    <option>15:00</option>
-                                    <option>16:00</option>
-                                    <option>17:00</option>
-                                    <option>18:00</option>
-                                    <option>19:00</option>
-                                    <option>20:00</option>
-                                </select>
+                            <div class="form__field--number">
+                                <span class="form__field--btn minus">-</span>
+                                <input type="number" min="1" max="12" id="selectPeople" value="2" class="form__field--input" readonly />
+                                <span class="form__field--btn plus">+</span>
                             </div>
+                            <div class="form__field--max">Max. <span id="max">12</span></div>
+                        </div>
+                        <div class="form__field">
+                            <label for="selectDate">Preferred Date</label>
+                            <input type="text" readonly id="selectDate" class="form__field--input datepicker" placeholder="Select Date" />
+                            <div id="date-picker-div"></div>
+                        </div>
+                        <div class="form__field">
+                            <label for="selectTime">Select Time</label>
+                            <div class="form__field--withDropDown">
+                                <input type="text" readonly id="selectTime" class="form__field--input timePicker hasDropDown" placeholder="Select Time" />
+                                <ul class="form__field__dropDown">
+                                    <li class="form__field__dropDown--item">10:00</li>
+                                    <li class="form__field__dropDown--item">11:00</li>
+                                    <li class="form__field__dropDown--item">12:00</li>
+                                    <li class="form__field__dropDown--item">13:00</li>
+                                    <li class="form__field__dropDown--item">14:00</li>
+                                    <li class="form__field__dropDown--item">15:00</li>
+                                    <li class="form__field__dropDown--item">16:00</li>
+                                    <li class="form__field__dropDown--item">17:00</li>
+                                    <li class="form__field__dropDown--item">18:00</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="form__btn">
+                            <button class="form__btn--link" type="button">Find Table</button>
                         </div>
                     </div>
 
+                    <div class="nearByTime">
+                        <ul class="nearByTime__list">
+                            <li class="nearByTime__list--item">15:00</li>
+                            <li class="nearByTime__list--item">15:15</li>
+                            <li class="nearByTime__list--item">15:45</li>
+                            <li class="nearByTime__list--item">16:00</li>
+                        </ul>
+                    </div>
+
                     <div class="mainBlock--booking">
-                        Hello
+                        <div class="mainBlock__timing">
+                            <span class="mainBlock__timing--back">Back</span>
+                            <div class="mainBlock__timing--time">15m 10s Left</div>
+                        </div>
+                        <div class="form__field">
+                            
+                        </div>
                     </div>
 
                 </div>
             </form>
+
+            <div class="poweredBy">Powered By: <a href="http://www.cnblink.com/" target="_blank" class="poweredBy--link">CNB LInk</a></div>
+
         </div>
 
         <!-- Scripts -->

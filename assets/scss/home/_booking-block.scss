@@ -1,5 +1,121 @@
 .mainBlock{
     &--container{
         @include container;
+        background-color: $color-white;
+        border-radius: 5px;
+    }
+    &--selection{
+        padding: 20px 0;
+        @include responsive(md){
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -10px;
+            padding: 30px 10px;
+        }
+        .form{
+            &__field{
+                @include responsive(md){
+                    width: calc(33.3333% - 20px);
+                    margin: 0 10px 20px;
+                    align-self: flex-start;
+                }
+            }
+        }
+    }
+    .nearByTime{
+        padding-bottom: 20px;
+        @include responsive(md){
+            padding-bottom: 30px;
+        }
+        @include responsive(xl){
+            padding-bottom: 40px;
+        }
+        &__list{
+            display: flex;
+            justify-content: center;
+            &--item{
+                margin: 0 3px 6px;
+                background-color: $color-blue;
+                padding: 8px 15px;
+                color: $color-white;
+                border-radius: 3px;
+                cursor: pointer;
+                transition: background-color $time-fast;
+                &:hover{
+                    @include responsive(xl){
+                        background-color: $color-blue-dark;
+                    }
+                }
+            }
+        }
+    }
+    &__timing{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        &--back{
+            font-weight: $fw-medium;
+            border: none;
+            border-radius: 5px;
+            height: 45px;
+            padding: 0 30px;
+            background-color: $color-blue;
+            color: $color-white;
+            display: flex;
+            align-items: center;
+            transition: background-color $time-fast, color $time-fast;
+            cursor: pointer;
+            margin-right: 15px;
+            @include responsive(xl){
+                margin-right: 25px;
+            }
+            &:before{
+                content: "";
+                position: relative;
+                left: 0;
+                width: 8px;
+                height: 8px;
+                border-top: 2px solid $color-white;
+                border-left: 2px solid $color-white;
+                transform: rotate(-45deg);
+                margin-right: 5px;
+                transition: left $time-fast;
+            }
+            &:hover{
+                @include responsive(xl){
+                    background-color: $color-blue-dark;
+                }
+                &:before{
+                    @include responsive(xl){
+                        left: -5px;
+                    }
+                }
+            }
+        }
+        &--time{
+            font-weight: $fw-sbold;
+            font-size: 20px;
+            color: $color-red;
+            @include responsive(xl){
+                font-size: 24px;
+            }
+        }
+    }
+}
+
+.poweredBy{
+    text-align: center;
+    padding: 20px;
+    font-size: 12px;
+    font-weight: $fw-medium;
+    color: $color-grey;
+    &--link{
+        color: $color-blue;
+        transition: color $time-fast;
+        &:hover{
+            @include responsive(xl){
+                color: $color-red;
+            }
+        }
     }
 }

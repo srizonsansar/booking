@@ -6,4 +6,7 @@
     @include responsive('sm'){
         max-width: 600px;
     }
+    @include responsive('md'){
+        max-width: 980px;
+    }
 }

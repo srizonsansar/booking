@@ -1,5 +1,11 @@
 // Importing Files
-import TestAlert from './test.js'
+import { formJS } from './form'
+import  formDropDown  from './form-dropdown'
 
 // Importing Functions
-new TestAlert()
+document.addEventListener('DOMContentLoaded', () => {
+
+    formJS()
+    new formDropDown()
+
+})

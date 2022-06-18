@@ -1,0 +1,122 @@
+#date-picker-div{
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+}
+.ui-datepicker{
+    background-color: $color-white;
+    top: 0!important;
+    left: 0!important;
+    border-radius: 3px;
+    border: 1px solid $color-blue-dark;
+    display: none;
+    width: 100%;
+    .ui-datepicker-header{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 10px;
+        border-bottom: 1px solid $color-blue-dark;
+        @include responsive(xl){
+            padding: 15px;
+        }
+        .ui-corner-all{
+            font-size: 13px;
+            font-weight: $fw-medium;
+            cursor: pointer;
+        }
+        .ui-datepicker-next{
+            order: 2;
+        }
+        .ui-datepicker-title{
+            order: 1;
+            font-weight: $fw-sbold;
+            font-size: 14px;
+        }
+    }
+    .ui-datepicker-calendar{
+        width: 100%;
+        padding: 10px 10px 20px;
+        display: block;
+        thead{
+            width: 100%;
+            display: block;
+            tr{
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                th{
+                    text-align: center;
+                    padding: 10px 0;
+                    width: 14.285%;
+                    font-size: 13px;
+                    font-weight: $fw-medium;
+                }
+            }
+        }
+        tbody{
+            width: 100%;
+            display: block;
+            tr{
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                td{
+                    text-align: center;
+                    width: 14.285%;
+                    display: flex;
+                    justify-content: center;
+                    font-size: 12px;
+                    padding: 2px 0;
+                    @include responsive(xl){
+                        font-size: 13px;
+                    }
+                    a{
+                        &:hover{
+                            @include responsive(xl){
+                                background-color: darken($color-grey-light, 5%);
+                            }
+                        }
+                    }
+                    span, a{
+                        width: 28px;
+                        height: 28px;
+                        border-radius: 50%;
+                        color: $color-black2;
+                        text-decoration: none;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-weight: $fw-medium;
+                        transition: background-color $time-fast;
+                        @include responsive(xl){
+                            width: 32px;
+                            height: 32px;
+                        }
+                        &.ui-state-active{
+                            background-color: $color-blue-dark;
+                            color: $color-white;
+                        }
+                    }
+                    &.ui-state-disabled{
+                        opacity: .5;
+                    }
+                    &.ui-datepicker-today{
+                        opacity: 1;
+                        span{
+                            background-color: darken($color-grey-light, 5%);
+                            font-weight: $fw-bold;
+                            color: $color-blue-dark;
+                        }
+                    }
+                    &.ui-datepicker-other-month{
+                        opacity: .3;
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+}
